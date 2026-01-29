@@ -5,6 +5,7 @@ from aiogram import Bot, Dispatcher
 
 from config_data.confing import BOT_TOKEN
 from handlers.handler_start import start_router
+from handlers.handler_menu import menu_router
 from handlers.handler_about import about_router
 
 import logging
@@ -17,9 +18,9 @@ logging.basicConfig(
 async def main():
     '''Основная функция инициализации и запуска Telegram бота'''
     bot = Bot(BOT_TOKEN)
-
-    dp = Dispatcher(storage = MemoryStorage)
+    dp = Dispatcher(storage=MemoryStorage())
     dp.include_router(start_router)
+    dp.include_router(menu_router)
     dp.include_router(about_router)
     
 

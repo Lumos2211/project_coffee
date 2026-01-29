@@ -1,8 +1,5 @@
 from aiogram import F, Router
-from aiogram.types import Message, ReplyKeyboardRemove
-from aiogram.fsm.state import State, StatesGroup
-from aiogram.fsm.context import FSMContext
-
+from aiogram.types import Message
 
 import keybords.keybords as kb
 import os
