@@ -4,26 +4,23 @@ from aiogram.fsm.state import State, StatesGroup
 from aiogram.fsm.context import FSMContext
 
 
-from utils import search_rating
-from database.database import add_to_database
 import keybords.keybords as kb
+import os
 
 import logging
 logger = logging.getLogger(__name__)
 
 
-router_2 = Router()
+about_router = Router()
 
 
-class Register_2(StatesGroup):
-    year = State()
-    rating = State()
-    genres = State()
-    limit= State()
-
-
-
-@router_2.message(F.text == "О нас")
-async def register(message: Message):
-    logger.info('start hendler about')
-    await message.answer('', reply_markup=ReplyKeyboardRemove())
+@about_router.message(F.text == "О нас")
+async def about_handler(message: Message):
+    logger.info('start handler about')
+    # Читаем текст из файла
+    file_path = os.path.join('utils', 'about_us.txt')
+    with open(file_path, 'r', encoding='utf-8') as file:
+        text_content = file.read()
+    
+    # Отправляем текст пользователю
+    await message.answer(text_content)

@@ -12,7 +12,6 @@ start_router = Router()
 
 @start_router.message(CommandStart())
 async def cmd_start(message: Message):
-    logger.info('Получено сообщение с запросом')
-    telegram_id = message.from_user.id
+    logger.info('start bot')
     username = message.from_user.username
-    await message.answer(f"Привет, {telegram_id}/{username}! \n🔍 Для поиска используй кнопки ниже", reply_markup=kb.keyboard)
+    await message.answer(f"Привет, {username}! \n🔍 Для поиска используй кнопки ниже", reply_markup=kb.keyboard)
