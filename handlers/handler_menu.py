@@ -1,14 +1,12 @@
-from fileinput import filename
 from aiogram import F, Router
 from aiogram.types import Message
-from aiogram.types import FSInputFile
 
 import keybords.keybords as kb
 import os
 
 import logging
 
-from utils.responce_fun import responce_func
+from utils.parse_yandex import responce_func
 logger = logging.getLogger(__name__)
 
 
