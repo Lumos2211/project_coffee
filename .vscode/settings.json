@@ -1,0 +1,16 @@
+// settings.json
+{
+  "python.languageServer": "Pylance", // Лучший вариант!
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.completeFunctionParens": true,
+  "python.analysis.indexing": true,
+  "python.analysis.autoSearchPaths": true,
+  
+  // Для быстрых предложений
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+  },
+  "editor.suggestOnTriggerCharacters": true
+}

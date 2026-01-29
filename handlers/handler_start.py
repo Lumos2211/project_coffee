@@ -8,9 +8,9 @@ logger = logging.getLogger(__name__)
 import keybords.keybords as kb
 
 
-router_0 = Router()
+start_router = Router()
 
-@router_0.message(CommandStart())
+@start_router.message(CommandStart())
 async def cmd_start(message: Message):
     logger.info('Получено сообщение с запросом')
     telegram_id = message.from_user.id
