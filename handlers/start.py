@@ -8,9 +8,9 @@ logger = logging.getLogger(__name__)
 import keybords.keybords as kb
 
 
-start_router = Router()
+router = Router()
 
-@start_router.message(CommandStart())
+@router.message(CommandStart())
 async def cmd_start(message: Message):
     logger.info('start bot')
     username = message.from_user.username

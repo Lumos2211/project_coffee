@@ -10,10 +10,10 @@ from utils.parse_yandex import responce_func
 logger = logging.getLogger(__name__)
 
 
-menu_router = Router()
+outer = Router()
 
 
-@menu_router.message(F.text == "Меню")
+@outer.message(F.text == "Меню")
 async def menu_handler(message: Message):
     logger.info('start handler menu')
     menu_items = responce_func()

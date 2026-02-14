@@ -8,10 +8,10 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-about_router = Router()
+router = Router()
 
 
-@about_router.message(F.text == "О нас")
+@router.message(F.text == "О нас")
 async def about_handler(message: Message):
     logger.info('start handler about')
     # Читаем текст из файла
