@@ -4,7 +4,7 @@ from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram import Bot, Dispatcher
 
 from config_data.confing import BOT_TOKEN
-from handlers import hendlers
+import handlers
 
 import logging
 
@@ -19,7 +19,7 @@ async def main():
     '''Основная функция инициализации и запуска Telegram бота'''
     bot = Bot(BOT_TOKEN)
     dp = Dispatcher(storage=MemoryStorage())
-    dp.include_router(hendlers.setup_routers())
+    dp.include_router(handlers.setup_routers())
     await set_main_menu(bot)
     await dp.start_polling(bot)
 

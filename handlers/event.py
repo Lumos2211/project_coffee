@@ -10,7 +10,7 @@ import keybords.keybords as kb
 
 router = Router()
 
-@router.message(CommandStart())
+@router.message(F.text == 'График мероприятий')
 async def event(message: Message):
     logger.info('hendler event start')
     await message.answer(f"Привет, этот раздел пока в работе! \n🔍 Для поиска используй кнопки ниже", reply_markup=kb.keyboard)

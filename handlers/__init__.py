@@ -1,10 +1,10 @@
 from aiogram import Router
 
-from . import event, menu, start
+
 
 
 def setup_routers() -> Router:
-    from . import about
+    from . import event, menu, start, about
 
     router = Router()
     router.include_router(start.router)
